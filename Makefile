@@ -1,7 +1,7 @@
 up: docker-up
 init: docker-down-clear docker-pull docker-build docker-up app-init
 test: app-test
-lint: app-lint
+check: app-lint app-cs-check
 
 docker-up:
 	docker-compose up -d
@@ -37,3 +37,6 @@ sec-check:
 
 app-lint:
 	docker-compose run --rm app-php-cli composer lint
+
+app-cs-check:
+	docker-compose run --rm app-php-cli composer cs-check
