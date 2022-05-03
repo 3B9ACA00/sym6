@@ -3,10 +3,11 @@
 namespace App\Controller;
 
 use Exception;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController
+class HomeController extends AbstractController
 {
     /**
      * @throws Exception
@@ -14,20 +15,9 @@ class HomeController
     #[Route('/')]
     public function home(): Response
     {
-        return new Response(
-            '<!doctype html>
-            <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-                    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                    <title>Document</title>
-                </head>
-                <body>
-                    <h1>Hello Project!</h1>
-                </body>
-            </html>'
-        );
+        return $this->render('home.html.twig', [
+            'message' => "Hello Project!",
+        ]);
     }
 }
 
