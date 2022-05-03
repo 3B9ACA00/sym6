@@ -53,7 +53,8 @@
         "symfony/debug-bundle": "6.0.*",
         "symfony/maker-bundle": "^1.0",
         "symfony/stopwatch": "6.0.*",
-        "symfony/web-profiler-bundle": "6.0.*"
+        "symfony/web-profiler-bundle": "6.0.*",
+        "vimeo/psalm": "^4.23"
     },
     "config": {
         "allow-plugins": {
@@ -90,6 +91,7 @@
         "lint": "phplint",
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
+        "psalm": "psalm",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
