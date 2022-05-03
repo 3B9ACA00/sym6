@@ -86,8 +86,14 @@
     "monolog/monolog": {
         "version": "2.5.0"
     },
+    "n98/junit-xml": {
+        "version": "1.1.0"
+    },
     "nikic/php-parser": {
         "version": "v4.13.2"
+    },
+    "overtrue/phplint": {
+        "version": "5.1.0"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"

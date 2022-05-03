@@ -47,6 +47,7 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "overtrue/phplint": "^5.1",
         "roave/security-advisories": "dev-latest",
         "symfony/debug-bundle": "6.0.*",
         "symfony/maker-bundle": "^1.0",
@@ -85,6 +86,7 @@
         "symfony/polyfill-php80": "*"
     },
     "scripts": {
+        "lint": "phplint",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"

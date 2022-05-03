@@ -1,6 +1,7 @@
 up: docker-up
 init: docker-down-clear docker-pull docker-build docker-up app-init
 test: app-test
+lint: app-lint
 
 docker-up:
 	docker-compose up -d
@@ -33,3 +34,6 @@ symfony-check:
 
 sec-check:
 	docker-compose run --rm app-php-cli symfony check:security
+
+app-lint:
+	docker-compose run --rm app-php-cli composer lint
