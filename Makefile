@@ -1,7 +1,10 @@
 up: docker-up
-init: docker-down-clear docker-pull docker-build docker-up app-init
+init: docker-down-clear docker-pull docker-build docker-up app-composer-install
 test: app-test
 check: lint phpcs psalm
+
+update:
+	docker-compose run --rm app-php-cli composer update
 
 docker-up:
 	docker-compose up -d
@@ -18,13 +21,8 @@ docker-pull:
 docker-build:
 	docker-compose build
 
-app-init: app-composer-install app-composer-update
-
 app-composer-install:
 	docker-compose run --rm app-php-cli composer install
-
-app-composer-update:
-	docker-compose run --rm app-php-cli composer update
 
 app-test:
 	docker-compose run --rm app-php-cli php bin/phpunit
