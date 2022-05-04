@@ -1,7 +1,7 @@
 up: docker-up
 init: docker-down-clear docker-pull docker-build docker-up app-init
 test: app-test
-check: app-lint app-cs-check app-psalm
+check: lint phpcs psalm
 
 docker-up:
 	docker-compose up -d
@@ -35,11 +35,11 @@ symfony-check:
 sec-check:
 	docker-compose run --rm app-php-cli symfony check:security
 
-app-lint:
+lint:
 	docker-compose run --rm app-php-cli composer lint
 
-app-cs-check:
+phpcs:
 	docker-compose run --rm app-php-cli composer cs-check
 
-app-psalm:
+psalm:
 	docker-compose run --rm app-php-cli composer psalm
