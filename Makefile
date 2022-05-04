@@ -41,3 +41,12 @@ phpcs:
 
 psalm:
 	docker-compose run --rm app-php-cli composer psalm
+
+list:
+	docker-compose run --rm app-php-cli php bin/console
+
+migration:
+	docker-compose run --rm app-php-cli php bin/console make:migration
+
+migrate:
+	docker-compose run --rm app-php-cli php bin/console doctrine:migrations:migrate
