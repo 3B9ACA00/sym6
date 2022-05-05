@@ -1,7 +1,7 @@
 up: docker-up
 init: docker-down-clear docker-pull docker-build docker-up app-composer-install
 test: app-test
-check: lint phpcs psalm
+check: lint phpcs psalm twig-lint
 
 update:
 	docker-compose run --rm app-php-cli composer update
@@ -42,6 +42,9 @@ phpcs:
 psalm:
 	docker-compose run --rm app-php-cli composer psalm
 
+twig-lint:
+	docker-compose run --rm app-php-cli php bin/console lint:twig --show-deprecations templates/
+
 list:
 	docker-compose run --rm app-php-cli php bin/console
 
@@ -50,3 +53,4 @@ migration:
 
 migrate:
 	docker-compose run --rm app-php-cli php bin/console doctrine:migrations:migrate
+
