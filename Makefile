@@ -54,3 +54,5 @@ migration:
 migrate:
 	docker-compose run --rm app-php-cli php bin/console doctrine:migrations:migrate
 
+crud:
+	docker-compose run --rm app-php-cli php bin/console make:crud
